@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recall-memory"
+version = "0.1.0"
+description = "Agent memory that actually learns. Continual LoRA + closed-form repair (AVR) — no retrieval needed at inference."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Aryan" }]
+keywords = ["llm", "agents", "memory", "continual-learning", "lora", "peft", "catastrophic-forgetting"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.2.0",
+    "transformers>=4.45.0",
+    "peft>=0.13.0",
+    "accelerate>=0.34.0",
+    "safetensors>=0.4.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+]
+
+[project.optional-dependencies]
+modal = ["modal>=0.64.0"]
+dev = ["pytest>=7.0", "ipython"]
+
+[project.scripts]
+recall = "recall.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["recall*", "eval*"]

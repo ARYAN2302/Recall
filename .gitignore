@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Generated outputs — keep eval/results/ tracked (charts are committed), ignore the rest
+output/
+outputs/
+runs/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Modal local config (contains secrets)
+.modal.toml
+
+# Local state — never commit
+recall_state.db
+recall_queue.db
+*.log
+
+# Keep these (charts and results are committed for reproducibility)
+!eval/results/
+!eval/results/**
